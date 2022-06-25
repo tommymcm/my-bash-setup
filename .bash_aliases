@@ -29,4 +29,4 @@ alias free='free -h'
 alias vlock='vlock --all'
 
 # SSH Aliases
-peroni='ssh peroni'
+alias peroni='ssh peroni'
