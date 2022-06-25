@@ -27,3 +27,6 @@ alias tree='tree -C'
 alias df='df -h'
 alias free='free -h'
 alias vlock='vlock --all'
+
+# SSH Aliases
+peroni='ssh peroni'
