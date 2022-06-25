@@ -1,0 +1,58 @@
+# Prompt
+export PS1='\[\e[0;92m\]╭╴\[\e[1;3;37m\]\h\[\e[0;1;37m\]:\[\e[1;33m\]\w\[\e[0;37m\]\[\e[0m\] \n\[\e[0;92m\]╰╼\[\e[0m\] '
+
+# Global variables
+export EDITOR=emacs
+
+if [ -d /nfs-scratch/$(whoami) ] ; then
+  export F=/nfs-scratch/$(whoami)
+  export NFS=/nfs-scratch/$(whoami)
+  export TMPDIR=/nfs-scratch/$(whoami)/tmp
+fi
+
+if [ -d /project ] ; then
+  # Home
+  export PATH=~/bin:~/sys/bin:$PATH
+
+  # CAT
+  export PATH=~/CAT/bin:$PATH
+
+  # LLVM
+  #source /project/llvm/3.7.1/enable
+  #source /project/llvm/3.9.1/enable
+  #source /project/llvm/5.0.0/enable
+  #source /project/llvm/7.0.0/enable
+  #source /project/llvm/7.0.1/enable
+  #source /project/llvm/8.0.0/enable
+  source /project/extra/llvm/9.0.0/enable
+
+  # iverilog
+  source /project/extra/iverilog/10.2/enable
+
+  # Burn CPU
+  source /project/extra/burnCPU/enable
+
+  # QEMU-ARM
+  source /project/extra/qemu-arm/6.0.0/enable
+
+  # Ninja
+  source /project/extra/ninja/enable
+
+  # GCC
+  #enableSoftware "/opt/rh/gcc-toolset-9/enable" ;
+
+  # Racket
+  export PATH=/project/racket-6.4/bin:$PATH
+
+  # Boost C++ library
+  # enableSoftware "/project/extra/boost/1.72.0/enable" ;
+
+  # Intel PIN
+  # enableSoftware "/project/extra/pin/3.13/enable" ;
+
+  # Intel PIN
+  # enableSoftware "/project/go/go_1.13.7/enable" ;
+
+fi
+
+echo -e -n "\e[2 q"
