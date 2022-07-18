@@ -7,6 +7,9 @@ export EDITOR=emacs
 # Keybinds
 xmodmap -e 'keycode 65 = space underscore space'
 
+# Makefile rules autocomplete
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+
 if [ -d /nfs-scratch/$(whoami) ] ; then
   export F=/nfs-scratch/$(whoami)
   export NFS=/nfs-scratch/$(whoami)
